@@ -5,13 +5,14 @@
 //GLOBAL VARIABLES
 /* global $ */
 
-//let random = Math.floor(Math.random() * 3) + 1);
-
-
 // DOCUMENT READY FUNCTION BELOW
-$( "document" ).ready(function() { 
+
+$("document").ready(function() { 
     $("#shoot").click(function() {
         let userChoice = $("#input").val();
         $("#result").append(`<p>${userChoice}</p>`);
+        let random = Math.floor(Math.random() * 3);
+        let possible_outcomes = ['rock', 'paper', 'scissors'];
+        possible_outcomes.length
     });
 });
