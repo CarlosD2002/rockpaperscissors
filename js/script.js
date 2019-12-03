@@ -6,6 +6,10 @@
 /* global $ */
 
 // DOCUMENT READY FUNCTION BELOW
+let pCounter = 0;  
+let cCounter = 0;
+$("#userCounter").text("You won: " + pCounter + " times.");
+$("#computerCounter").text("Computer won: " + cCounter + " times.");
 
 $("document").ready(function() { 
     $("#shoot").click(function() {
@@ -14,8 +18,9 @@ $("document").ready(function() {
         $("computerChoice").empty();
         $("#result").empty();
         let userInput = $("#input").val();
+        let lowercase = userInput.toLowerCase();
         $("#userChoice").text(`${userInput}`);
-        let possible_outcomes = ['rock', 'paper', 'scissors'];
+        let possible_outcomes = ['Rock', 'Paper', 'Scissors'];
         let computerRandom = (Math.floor(Math.random() * 3) + 1);
         if(computerRandom === 1) {
             $("#computerChoice").text(`${possible_outcomes[0]}`)
@@ -24,32 +29,43 @@ $("document").ready(function() {
         } else{
             $("#computerChoice").text(`${possible_outcomes[2]}`)
         }
-if((userInput === "rock") && (computerRandom === 3)) {
+if((lowercase === "rock") && (computerRandom === 3)) {
     $("#result").text("You are the winner!");
+     pCounter = pCounter + 1;
 }
-else if((userInput === "paper") && (computerRandom === 1)) {
+else if((lowercase === "paper") && (computerRandom === 1)) {
     $("#result").text("You are the winner!");
+     pCounter = pCounter + 1;
 }
-else if((userInput === "scissors") && (computerRandom === 2)) {
+else if((lowercase === "scissors") && (computerRandom === 2)) {
     $("#result").text("You are the winner!");
+     pCounter = pCounter + 1;
 }
-else if((userInput === "rock") && (computerRandom === 1)) {
+else if((lowercase === "rock") && (computerRandom === 1)) {
     $("#result").text("You draw!");
 }
-else if((userInput === "paper") && (computerRandom === 2)) {
+else if((lowercase === "paper") && (computerRandom === 2)) {
     $("#result").text("You draw!");
 }
-else if((userInput === "scissors") && (computerRandom === 3)) {
+else if((lowercase === "scissors") && (computerRandom === 3)) {
     $("#result").text("You draw!");
 }
-else if((userInput === "rock") && (computerRandom === 2)) {
+else if((lowercase === "rock") && (computerRandom === 2)) {
     $("#result").text("You lost!");
+     cCounter = cCounter + 1;
 }
-else if((userInput === "paper") && (computerRandom === 3)) {
+else if((lowercase === "paper") && (computerRandom === 3)) {
     $("#result").text("You lost!");
+     cCounter = cCounter + 1;
 }
-else if((userInput === "scissors") && (computerRandom === 1)) {
+else if((lowercase === "scissors") && (computerRandom === 1)) {
     $("#result").text("You lost!");
+     cCounter = cCounter + 1;
 }
+else {
+    $("#result").text('"' + `${userInput}` + '"' + " is not a valid input.");
+}
+$("#userCounter").text("You won: " + pCounter + " times.");
+$("#computerCounter").text("Computer won: " + cCounter + " times.");
     });
 });
