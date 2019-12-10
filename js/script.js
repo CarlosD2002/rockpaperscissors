@@ -30,15 +30,15 @@ $("document").ready(function() {
             $("#computerChoice").text(`${possible_outcomes[2]}`)
         }
 if((lowercase === "rock") && (computerRandom === 3)) {
-    $("#result").text("You are the winner!");
+    $("#result").text("You won!");
      pCounter = pCounter + 1;
 }
 else if((lowercase === "paper") && (computerRandom === 1)) {
-    $("#result").text("You are the winner!");
+    $("#result").text("You won!");
      pCounter = pCounter + 1;
 }
 else if((lowercase === "scissors") && (computerRandom === 2)) {
-    $("#result").text("You are the winner!");
+    $("#result").text("You won!");
      pCounter = pCounter + 1;
 }
 else if((lowercase === "rock") && (computerRandom === 1)) {
